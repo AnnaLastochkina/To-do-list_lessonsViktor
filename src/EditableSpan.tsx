@@ -2,6 +2,8 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import {FilterValuesType} from './App';
 import './App.css'
 import {AddItemForm} from "./AddItemForm";
+import {IconButton, TextField} from "@material-ui/core";
+import {Edit} from "@material-ui/icons";
 
 type editableSpanPropsType = {
     title: string
@@ -9,7 +11,7 @@ type editableSpanPropsType = {
 }
 
 export const EditableSpan = (props: editableSpanPropsType) => {
-    const [editMode, setEditMode] = useState<boolean>(true)
+    const [editMode, setEditMode] = useState<boolean>(false)
     const [title, setTitle] = useState<string>(props.title)
     const onEditMode = () => {
         setEditMode(true)
@@ -24,12 +26,17 @@ export const EditableSpan = (props: editableSpanPropsType) => {
 }
     return (
         editMode ?
-            <input
+            <TextField
+                size={'small'}
                 value={title}
                 autoFocus={true}
                 onBlur={offEditMode}
                 onChange = {changeTitle}
             />
             :
-            <span onDoubleClick={onEditMode}>{props.title}</span>)
+            <span onDoubleClick={onEditMode}>{props.title}
+                </span>
+
+)
+
 }
