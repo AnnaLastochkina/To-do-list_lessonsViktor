@@ -33,15 +33,14 @@ export const AddItemForm = (props:AddItemFormPropsType)  =>{
     return (
         <div>
             <TextField
-
-                value={title}
-                label="Type your task"
-                variant="outlined"
+                   value={title}
+                   label="Type your task"
+                   variant="outlined"
                    size={'small'}
                    onChange={onChangeHandler}
                    onKeyPress={onKeyPressHandler}
                    error={!!error}
-                helperText={error}
+                   helperText={error}
             />
             <IconButton onClick={addItem}><ControlPoint fontSize={'medium'}/></IconButton>
         </div>
