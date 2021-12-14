@@ -6,7 +6,7 @@ import {EditableSpan} from "./EditableSpan";
 import {Button, ButtonGroup, Checkbox, Icon, IconButton, List, ListItem, Typography} from "@material-ui/core";
 import {Delete, DeleteOutline} from "@material-ui/icons";
 
-type TaskType = {
+export type TaskType = {
     id: string
     title: string
     isDone: boolean
