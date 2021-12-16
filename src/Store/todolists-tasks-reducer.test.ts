@@ -2,7 +2,7 @@
 import {v1} from 'uuid';
 import {FilterValuesType, TasksStateType, todoListsType} from '../App';
 import {
-    AddTodolistAC, ChangeTodolistFilter,
+    AddTodolistAC, ChangeTodolistFilterAC,
     ChangeTodolistTitleAC,
     RemoveTodolistAC, todolistsReducer
 } from "./todolists-reducer";
