@@ -1,18 +1,18 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 
 import './App.css'
-import {Button, IconButton, TextField} from "@material-ui/core";
-import {Add, AddBox, ControlPoint, PlusOne} from "@material-ui/icons";
+import {IconButton, TextField} from "@material-ui/core";
+import {ControlPoint} from "@material-ui/icons";
 
 type AddItemFormPropsType = {
     addItem:(title:string)=> void
 
 }
-export const AddItemForm = (props:AddItemFormPropsType)  =>{
+export const  AddItemForm = React.memo((props:AddItemFormPropsType)  =>{
     let [title, setTitle] = useState("")
     let [error, setError] = useState<boolean|string>(false)
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setError(false)
+        if  (error !== false) {setError(false)}
         setTitle(e.currentTarget.value)
     }
     const addItem = () => {
@@ -46,5 +46,5 @@ export const AddItemForm = (props:AddItemFormPropsType)  =>{
         </div>
 
     )
-}
+})
 
